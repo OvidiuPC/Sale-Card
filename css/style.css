@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0; 
+}
+body{
+    background-color: rgb(255, 255, 254);
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sedan suv luxury";
+    height: 60vh;
+    width:60% ;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+}
+.card{
+   
+    padding: 3vw;
+}
+.logo{
+    margin: 10px 0;
+}
+.title{
+    text-transform: uppercase;
+    color: white;
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+
+.descriptione{
+    color: white;
+    height: 10vh;
+}
+.button{
+    margin-top: 14vh;
+   width: 90px;
+   padding: 15px;
+   text-align: center;
+   border-radius: 40px;
+   border: 2px solid white;
+   background: white; 
+}
+/* Color for button text */
+.sedan p{
+   color:  rgb(182, 133, 0);
+}
+.suv p{
+    color: rgb(36, 119, 111);
+}
+.luxury p{
+    color: rgb(19, 49, 46);
+    
+}
+.button:hover {
+    background:rgba(255, 255, 255, 0);
+    cursor: pointer;  
+}
+.button:hover p{
+    color: white;
+}
+/* Color and individual card setting */
+
+.sedan-card{
+    grid-area: sedan;
+    background-color: rgb(182, 133, 0);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+.suv-card{
+    grid-area: suv;
+    background-color: rgb(36, 119, 111);
+}
+.luxury-card{
+    grid-area: luxury;
+    background-color: rgb(19, 49, 46);
+    border-bottom-right-radius: 10px;
+     border-top-right-radius: 10px;
+}
+/*Media for tablet*/
+@media (max-width:768px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "sedan"
+        "suv"
+        "luxury";
+        width: 60%;
+    }
+    .sedan-card{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+    .luxury-card{
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+    }
+    .button{
+   margin-top: 8vh;}
+}
+/* Media for phone */
+@media (max-width:320px) {
+    .container{
+        width: 80%;
+    }
+}
